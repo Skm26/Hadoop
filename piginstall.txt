@@ -1,0 +1,28 @@
+cd course/softwares
+wget https://archive.apache.org/dist/pig/pig-0.17.0/pig-0.17.0.tar.gz
+
+#Unzip the downloaded tar file.
+tar -xzf pig-0.17.0.tar.gz
+
+#Rename the file as pig
+
+mv pig-0.17.0 pig
+
+#Open the bashrc file and provide the following PIG_HOME path.
+nano ~/.bashrc
+export PIG_HOME=Path
+export PATH=$PATH:$PIG_HOME/sbin:$PIG_HOME/bin
+export CLASSPATH=$CLASSPATH:$PIG_HOME/lib/*
+export PIG_CLASSPATH=$PIG_HOME/conf:$HADOOP_HOME/etc/hadoop
+export PIG_CONF_DIR=$PIG_HOME/conf
+export PIG_CLASSPATH=$PIG_CONF_DIR:$PATH
+Update the environment variable
+source ~/.bashrc
+
+#Start the hdfs and yarn and then we can get pig grunt shell by typing pig
+Start-dfs.sh    
+start-yarn.sh
+
+#Start pig
+pig
+           
